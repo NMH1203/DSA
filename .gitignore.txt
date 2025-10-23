@@ -1,0 +1,7 @@
+*.exe
+
+/bin/
+/build/
+/target/
+.idea/
+.vscode/
