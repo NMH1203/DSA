@@ -44,3 +44,54 @@ int main(){
     return 0;
     
 }
+
+int my_gcd(int a, int b) {
+    a = my_abs(a);
+    b = my_abs(b);
+
+    if (b == 0) {
+        return a;
+    } else {
+        return my_gcd(b, a % b);
+    }
+}
+
+int gcd(int a, int b){
+	if (b==0) return a;
+	return gcd(b,a%b);
+}
+
+double findSqrt(double x)
+{
+    if (x < 2)
+        return x;
+    double y = x;
+    double z = (y + (x / y)) / 2;
+    while (fabs(y - z) >= 0.00001) {
+        y = z;
+        z = (y + (x / y)) / 2;
+    }
+    return z;
+}
+
+double my_abs_double(double num) {
+    if (num < 0) {
+        return -num;
+    } else {
+        return num;
+    }
+}
+
+double my_sqrt_double(double x) {
+    if (x == 0) {
+        return 0.0;
+    }
+    double y = x;
+    double z = (y + (x / y)) / 2.0;
+    
+    while (my_abs_double(y - z) >= 0.00001) {
+        y = z;
+        z = (y + (x / y)) / 2.0;
+    }
+    return z;
+}
